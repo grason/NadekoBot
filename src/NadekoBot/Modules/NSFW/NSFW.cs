@@ -218,7 +218,7 @@ namespace NadekoBot.Modules.NSFW
             ImageCacherObject imgObj;
             try
             {
-                imgObj = await _service.DapiSearch(tag, type, Context.Guild?.Id, forceExplicit).ConfigureAwait(false);
+                imgObj = await _service.DapiSearch(tag+"+rating:safe", type, Context.Guild?.Id, forceExplicit).ConfigureAwait(false);
             }
             catch (TagBlacklistedException)
             {
